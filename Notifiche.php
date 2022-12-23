@@ -21,7 +21,7 @@
     //Controllo la presenza delle stazioni o linee inserite nell'array
     foreach ($array as $word) {
     
-        if (preg_match("/\s*$word\s*/i", $string)!==false) {
+        if (preg_match("/\s*$word\s*/i", $string)) {
         
 	
 		/*inreire in questo punto il modo in cui si voglio ricvere le notifiche
