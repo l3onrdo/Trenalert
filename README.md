@@ -10,7 +10,7 @@ Ecco come utilizzare Trenalert:
 
 ## Server hosting
 
-Per utilizzare Trenalert, è necessario disporre di un server hosting dove salvare e eventualmente eseguire i cron job. Ad esempio, puoi utilizzare [Altervista](https://it.altervista.org).
+Per utilizzare Trenalert, è necessario disporre di un server hosting dove salvare ed eventualmente eseguire i cron job. Ad esempio, puoi utilizzare [Altervista](https://it.altervista.org).
 
 ## Cron job
 
