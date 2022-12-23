@@ -15,26 +15,27 @@
     //per le stazioni basta il nome
     //per la linea esempio "firenze-roma
     //NON VENGONO FATTI CONTROLLI SURLLA CORETTEZA DEI NOMI INSERIRE, QUALORA SIANO ERRATI IL CODICE PORTEBBE NON FUNZIONARE
-    $array = array('Firenze - Roma', 'Viterbo','Chivasso - Pinerolo');
+    //Esempio
+    $array = array('Firenze - Roma', 'Roma termini','Chivasso - Pinerolo');
 
     //Controllo la presenza delle stazioni o linee inserite nell'array
     foreach ($array as $word) {
     
         if (preg_match("/\s*$word\s*/i", $string)!==false) {
         
-            $api_key = "5860264964:AAGI3l31kWylDKr2Xi533ai0AYUOVEOcqnI"; // Token del tuo bot
-            
-            $chat_id = "695635146";//id della chat
-            
-            // Invia un messaggio di testo alla chat
-            $text = "Problemi sulla linea ecco le informazioni: \n\n".$string."\n\nPer ottenere alte informazioni contralli sul sito:\nhttps://www.trenitalia.com/it/informazioni/Infomobilita/notizie-infomobilita.html"; // Testo del messaggio
-            
-            $send_message = "https://api.telegram.org/bot" . $api_key . "/sendMessage?chat_id=" . $chat_id . "&text=" . urlencode($text);
-            
-            $response = file_get_contents($send_message);
+	
+		/*inreire in questo punto il modo in cui si voglio ricvere le notifiche
+		basta copiare uno dei due file qui dentro
+		...
+		....
+		.
+		.....
+		...
+		....
+		...*/
             
             break;
             
         }
     }
-?>
+?>
