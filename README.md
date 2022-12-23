@@ -1,12 +1,9 @@
 # Trenalert
-Site that sends notifications when there are tastes on the Italian railway line
+Codice PHP che permette di ricevere notiviche via Telegram o e-mail di eventuali problemi sulla linea ferroviaria italiana
 
+DISCLAIMER:
+Il presente codice è stato realizzato a scopo didattico e informativo. I contenuti pubblicati sono forniti "così come sono" e senza alcuna garanzia, implicita o esplicita, di accuratezza, completezza o idoneità a uno scopo specifico. Il proprietario del codice non è responsabile per eventuali danni o perdite che possono derivare dall'utilizzo delle informazioni ottenibili dal codice.
 
-# funzioni da fare
-1:invio di notifiche via telegrm o email;
+DECLINO DI OGNI RESPONSABILITÀ:
+Il proprietario del presente codice declina ogni responsabilità per eventuali errori, omissioni o perdite che possono derivare dall'utilizzo delle informazioni ottenibili dal codice.
 
-2:creare il database che salva le stazioni tracciate dagli utenti;
-
-3:crere un interfaccia e un form di accesso;
-
-4:Criptare le password inserite
