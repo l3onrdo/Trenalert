@@ -1,41 +1,30 @@
 <?php
-    //Imposta l'URL della pagina web che vuoi estrarre i dati"
+    // Imposta l'URL della pagina web da cui si vuole estrarre i dati
     $url = "https://www.trenitalia.com/it/informazioni/Infomobilita/notizie-infomobilita.html";
 
-    //Usa la funzione file_get_contents per recuperare il codice HTML della pagina web
-    $html = file_get_contents($url);
+    // Crea un nuovo documento DOM e carica il codice HTML dalla pagina web
+    $doc = new DOMDocument();
+    $doc->loadHTMLFile($url);
 
-    //Usa un espressione reolare per trovare le informazioni dal sito infomobilità
-    preg_match_all("/<a[^>]*href=\".*\"[^>]*class=\"headingNewsAccordion inEvidenza\"[^>]*>(.*?)<\/a>/", $html, $matches);
+    // Seleziona tutti gli elementi <a> con la classe "headingNewsAccordion inEvidenza"
+    // Seleziona tutti gli elementi <a> con la classe "headingNewsAccordion inEvidenza"
+    $xpath = new DOMXPath($doc);
+    $elements = $xpath->query('//a[@class="headingNewsAccordion inEvidenza"]');
 
-    //Crea una stringa che contenente tutti gli elemnti di $matches[1]
-    $string=implode("\n\n",$matches[1]);
-	
-    //inserisci il nome delle stazioni o delle linee da controllare
-    //per le stazioni basta il nome
-    //per la linea esempio "firenze-roma
-    //NON VENGONO FATTI CONTROLLI SURLLA CORETTEZA DEI NOMI INSERIRE, QUALORA SIANO ERRATI IL CODICE PORTEBBE NON FUNZIONARE
-    //Esempio
-    $array = array('Firenze - Roma', 'Roma termini','Chivasso - Pinerolo');
+    // Stampa il testo di tutti i link trovati
+    foreach ($elements as $element) {
+        $string=$element->nodeValue . "\n";
+    }
 
-    //Controllo la presenza delle stazioni o linee inserite nell'array
+    // Inserisci il nome delle stazioni o delle linee da controllare
+    // Per le stazioni basta il nome
+    // Per la linea esempio "firenze-roma"
+    // NON VENGONO FATTI CONTROLLI SULLA CORRETTEZZA DEI NOMI INSERITI, QUALORA SIANO ERRATI IL CODICE POTREBBE NON FUNZIONARE
+    //esempio
+    $array = array('euronight','firenze - roma','roma termini','roma tibutina');
+    // Controllo la presenza delle stazioni o linee inserite nell'array
     foreach ($array as $word) {
-    
-        if (preg_match("/\s*$word\s*/i", $string)) {
-        
-	
-		/*inreire in questo punto il modo in cui si voglio ricvere le notifiche
-		basta copiare uno dei due file qui dentro
-		...
-		....
-		.
-		.....
-		...
-		....
-		...*/
-            
-            break;
-            
-        }
+    	$string=strtolower($string);
+        //inserisci codeice per ricevere le norifiche
     }
 ?>
